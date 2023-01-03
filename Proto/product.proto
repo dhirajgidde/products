@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "../productsProto";
+
+package messager;
+
+service MessageReceiver {
+    rpc EnableProducts(Product) returns (ProdResponse);
+}
+
+message Product {
+    string Title = 1;
+    string SKU = 2;
+    string AccountCode = 3;
+}
+
+message ProdResponse {
+    string ResponseMessage = 1;
+}
